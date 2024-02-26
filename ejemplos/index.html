@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>messme.js</title>
   <script src="../messme.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/gh/datadiego/messme.js/messme.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/gh/datadiego/messme/messme.js"></script> -->
   <style>
 
     :root{
@@ -35,6 +35,7 @@
       color: #fff;
       border-radius: 5px;
       text-align: left;
+      font-size: 1cqw;
       margin: 0;
       padding: 0;
     }
@@ -91,6 +92,7 @@
       pre code{
         white-space: wrap;
         line-height: 1.5;
+        font-size: 2cqw;
       }
 
       
@@ -106,13 +108,19 @@
     
     <p>Librería para la <span class="mess">destrucción</span> <span class="curvas">creativa</span> de elementos HTML.</p>
     <p>
-    <a href="https://raw.githubusercontent.com/datadiego/messme.js/main/messme.js">Descarga messme.js</a></p>
+      <a href="/docs/index.html" target="_blank">Documentación</a>
+    </p>
+    <p>
+      <a href="https://raw.githubusercontent.com/datadiego/messme/main/messme.js" target="_blank">Descarga messme.js</a>
+    </p>
+    
+    
 
-    <p>O utilizalo desde un CDN:</p>
+    <p>Uso desde CDN:</p>
     <pre>
       <code>
         &lt;head&gt;
-        &lt;script src="https://cdn.jsdelivr.net/gh/datadiego/messme.js/messme.js"&gt;&lt;/script&gt;
+        &lt;script src="https://cdn.jsdelivr.net/gh/datadiego/messme/messme.js"&gt;&lt;/script&gt;
         &lt;/head&gt;
       </code>
     </pre>
@@ -170,14 +178,14 @@
   </main>
 
   <script>
-    const curvas = new Mess(".curvas", "loop", false);
+    const curvas = new Mess(".curvas");
     curvas.setIdleTime(500);
     curvas.setMessDelay(100);
     curvas.setFixDelay(50);
     curvas.setCharacters("╭╮╰╯─│".split(""));
     curvas.mess();
 
-    const mess = new Mess(".mess", "loop", false);
+    const mess = new Mess(".mess");
     mess.setIdleTime(1000);
     mess.setMessDelay(100);
     mess.setFixDelay(50);
@@ -185,28 +193,28 @@
     // mess.setCharacters("messme.js".split(""));
     mess.mess();
 
-    const mess2 = new Mess(".mess2", "loop", false);
+    const mess2 = new Mess(".mess2");
     mess2.setIdleTime(500);
     mess2.setMessDelay(100);
     mess2.setFixDelay(50);
     mess2.setCharacters("╔╗╚╝═".split(""));
     mess2.mess();
 
-    const mess3 = new Mess(".mess3", "loop", false);
+    const mess3 = new Mess(".mess3");
     mess3.setIdleTime(1000);
     mess3.setMessDelay(20);
     mess3.setFixDelay(100);
     mess3.setCharacters("¿?¡!()[]{}-_.,;:@#$%&/=+*".split(""));
     mess3.mess();
 
-    const dados = new Mess(".dados", "loop", false);
+    const dados = new Mess(".dados");
     dados.setIdleTime(1000);
     dados.setMessDelay(100);
     dados.setFixDelay(50);
     dados.setCharacters("⚀⚁⚂⚃⚄⚅".split(""));
     dados.mess();
 
-    const titulo = new Mess(".nombre", "loop", false);
+    const titulo = new Mess(".nombre");
     titulo.setIdleTime(1000);
     titulo.setMessDelay(50);
     titulo.setFixDelay(50);
