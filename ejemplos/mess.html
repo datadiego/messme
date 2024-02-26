@@ -42,10 +42,22 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      background: #eee;
+      background: var(--fg);
       color: black;
     }
-
+    a{
+      text-decoration: none;
+      color: var(--fg);
+      background: var(--bg);
+      border-bottom: 1px solid #fff;
+      transition: 0.4s;
+    }
+    a:hover{
+      transition: 0.4s;
+      border-bottom: 5px solid #f00;
+      color: var(--bg);
+      background: var(--fg);
+    }
     main{
       width: 60vw;
       overflow: hidden;
@@ -59,6 +71,11 @@
       border-radius: 5px;
       margin-top: 2em;
     }
+    footer{
+      margin: 2em 0;
+      font-size: 0.8rem;
+    }
+
   </style>
 </head>
 <body>
@@ -173,7 +190,7 @@
 
 </script>
 <footer>
-  <p>© 2024 <a href="https://github.com/datadiego">datadiego</a></p>
+  <p>✨ 2024 <a href="https://github.com/datadiego">datadiego</a> ✨</p>
 </footer>
 </body>
 </html>
