@@ -66,7 +66,6 @@ const randomMethods = {
     }
 }
 
-
 class Repeater{
     /**
      * Repeater es una clase que repite un callback hasta alcanzar una meta
@@ -137,7 +136,6 @@ class Repeater{
     }
 }
 
-
 class Manipulator{
     /**
      * 
@@ -201,8 +199,6 @@ class Manipulator{
     }
 }
 
-//Messer.js
-
 class Messer extends Manipulator{
     constructor(dynamicText){
         super(dynamicText);
@@ -231,8 +227,6 @@ class Messer extends Manipulator{
     }
 }
 
-//Fixer.js
-
 class Fixer extends Manipulator{
     constructor(dynamicText){
         super(dynamicText);
@@ -256,8 +250,6 @@ class Fixer extends Manipulator{
         this.dynamicText.element.innerHTML = this.dynamicText.split_text.join('');
     }
 }
-
-//string mess
 
 class DynamicText{
     /**
@@ -314,7 +306,6 @@ class DynamicText{
         this.fixer.createRepeater();
     }
 }
-
 
 class MessManager{
     /**
@@ -407,15 +398,5 @@ class MessManager{
     }
     
 }
-
-/*
-module.exports = {
-    MessManager,
-    DynamicText,
-    Messer,
-    Fixer,
-    Repeater
-}
-*/
 
 export {MessManager, DynamicText, Messer, Fixer, Repeater, randomMethods, ascii_chars, CHARACTERS, createSet}
