@@ -4,7 +4,7 @@ Libreria para la destrucción creativa de elementos del DOM.
 
 ## Instalación
 
-Descarga messme.js y añade el siguiente código en tu <head>:
+Descarga messme.js y añade el siguiente código en tu `<head>`:
 
 ```html
 <script src="messme.js"></script>
