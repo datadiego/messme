@@ -6,8 +6,6 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "build": "npx babel index.js -o ./lib/messme.js",
-    "drybuild": "node build/build.js",
     "docs": "npx jsdoc ./messme.js README.md -d ./docs"
   },
   "keywords": [],
