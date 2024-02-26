@@ -6,6 +6,8 @@ Libreria para la destrucción creativa de elementos del DOM.
 
 [Docs](https://messme.neocities.org/docs/)
 
+[Ejemplos](https://github.com/datadiego/messme/tree/main/ejemplos)
+
 ## Instalación
 
 Descarga messme.js y añade el siguiente código en tu `<head>`:
