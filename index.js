@@ -17,6 +17,25 @@ const MATH_CHARS = '±×÷√∞∫≈≠≡≤≥'
 const GREEK_CHARS = 'αβγδεζηθικλμνξοπρστυφχψω';
 const DICE_CHARS = '⚀⚁⚂⚃⚄⚅'
 
+/**Objeto con varios sets de caracteres ascii
+ * @type {object} 
+ * @property {string} basic abcdefghijklmñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789
+ * @property {string} special áéíóúÁÉÍÓÚ
+ * @property {string} symbol ¿?¡!()[]{}-_.,;:@#$%&/=+*
+ * @property {string} single_box ┌┐└┘─│
+ * @property {string} double_box ╔╗╚╝═║
+ * @property {string} round_box ╭╮╰╯─│
+ * @property {string} music ♩♪♫♬♭♮♯
+ * @property {string} chess ♔♕♖♗♘♙♚♛♜♝♞♟
+ * @property {string} cards ♠♣♥♦♤♧♡♢
+ * @property {string} blocks █▓▒░
+ * @property {string} round ○◌◍◎●◐◑◒◓◔◕
+ * @property {string} arrow ←↑→↓↔↕↖↗↘↙
+ * @property {string} math ±×÷√∞∫≈≠≡≤≥
+ * @property {string} greek αβγδεζηθικλμνξοπρστυφχψω
+ * @property {string} dice ⚀⚁⚂⚃⚄⚅
+ * 
+ */
 const ascii_chars = {
     basic: BASIC_CHARS,
     special: SPECIAL_CHARS,
@@ -45,22 +64,16 @@ function createSet(...sets) {
 
 const CHARACTERS = createSet(ascii_chars.basic, ascii_chars.special, ascii_chars.symbol, ascii_chars.block,ascii_chars.greek, ascii_chars.math);
 
-
+/**
+ * Objeto con metodos aleatorios
+ * @type {object}
+ * @property {function} getRandomElement(array) devuelve un elemento aleatorio de un array
+ * @property {function} getRandomCharacter() devuelve un caracter aleatorio
+ */
 const randomMethods = {
-    /**
-     * 
-     * @param {array} array el array del que extraer un elemento
-     * @returns un elemento aleatorio del array
-     */
     getRandomElement: function(array){
         return array[Math.floor(Math.random() * array.length)];
     },
-
-    /**
-     * 
-     * @returns un elemento de CHARACTERS
-     * 
-    */
     getRandomCharacter: function(){
         return this.getRandomElement(CHARACTERS);
     }
@@ -399,4 +412,4 @@ class MessManager{
     
 }
 
-export {MessManager, DynamicText, Messer, Fixer, Repeater, randomMethods, ascii_chars, CHARACTERS, createSet}
+export {MessManager, DynamicText, Messer, Fixer, Repeater, randomMethods, ascii_chars, CHARACTERS, createSet, BASIC_CHARS, SPECIAL_CHARS, SYMBOL_CHARS, SINGLE_BOX_CHARS, DOUBLE_BOX_CHARS, ROUND_BOX_CHARS, MUSIC_CHARS, CHESS_CHARS, CARDS_CHARS, BLOCKS_CHARS, ROUND_CHARS, ARROW_CHARS, MATH_CHARS, GREEK_CHARS, DICE_CHARS}
