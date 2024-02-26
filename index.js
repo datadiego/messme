@@ -1,6 +1,4 @@
-//messme es una libreria que te permite destruir y reconstruir elementos de texto HTML en tiempo real
-//la libreria se usa mediante la clase MessManager
-//chars.js
+
 const BASIC_CHARS = "abcdefghijklmñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789";
 const SPECIAL_CHARS = "áéíóúÁÉÍÓÚ";
 const SYMBOL_CHARS = "¿?¡!()[]{}-_.,;:@#$%&/=+*";
@@ -150,7 +148,7 @@ class Repeater{
 }
 
 class Manipulator{
-    /**
+    /** Esta clase utiliza un dynamicText para manipular su texto
      * 
      * @param {DynamicText} dynamicText Clase que contiene el texto a manipular
      */
@@ -159,7 +157,9 @@ class Manipulator{
         this.repeater = null;
         this.createRepeater();
     }
-
+    /**
+     * Crea un repeater para manipular el texto, el objetivo es la longitud del texto, el paso es 1, la velocidad es la velocidad de escritura y el modo de juego puede ser loop o manual. La accion a repetir es mess y la accion final es fix, excepto en el modo manual, que debe ser especificado por el usuario.
+     */
     createRepeater(){
         const goal = this.dynamicText.split_text.length;
         const step = 1
@@ -173,9 +173,17 @@ class Manipulator{
             this.repeater = new Repeater(goal, step, speed, autoreset, this.mess.bind(this));
         }
     }
+    /**
+     * 
+     * @returns {void} Sale de la funcion 
+     */
     idle(){
         return;
     }
+    /**
+     * Pone un caracter aleatorio en la posicion actual del texto
+     * @returns {void} Sale de la funcion
+     */
     mess(){
         const index = this.repeater.current;
         if(this.filter(index)){
@@ -185,7 +193,10 @@ class Manipulator{
         this.dynamicText.split_text[index] = randomCharacter; //asigna el caracter aleatorio a la posicion actual
         this.dynamicText.element.innerHTML = this.dynamicText.split_text.join('');
     }
-
+    /**
+     * Pone el caracter original en la posicion actual del texto
+     * @returns {void} Sale de la funcion
+     */
     fix(){
         const index = this.repeater.current;
         if(this.filter(index)){
@@ -194,10 +205,17 @@ class Manipulator{
         this.dynamicText.split_text[index] = this.dynamicText.text[index];
         this.dynamicText.element.innerHTML = this.dynamicText.split_text.join('');
     }
-
+    /**
+     * 
+     * @returns {string} Caracter aleatorio de dynamicText.characters
+     */
     getRandomCharacter(){
         return this.dynamicText.characters[Math.floor(Math.random() * this.dynamicText.characters.length)];
     }
+    /**
+     * Detiene el repeater
+     * @returns {void} Sale de la funcion
+     */
 
     stop(){
         this.repeater.stop();
@@ -412,4 +430,5 @@ class MessManager{
     
 }
 
-export {MessManager, DynamicText, Messer, Fixer, Repeater, randomMethods, ascii_chars, CHARACTERS, createSet, BASIC_CHARS, SPECIAL_CHARS, SYMBOL_CHARS, SINGLE_BOX_CHARS, DOUBLE_BOX_CHARS, ROUND_BOX_CHARS, MUSIC_CHARS, CHESS_CHARS, CARDS_CHARS, BLOCKS_CHARS, ROUND_CHARS, ARROW_CHARS, MATH_CHARS, GREEK_CHARS, DICE_CHARS}
+module.exports = { Repeater }
+

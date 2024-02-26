@@ -1,4 +1,4 @@
-const { Repeater } = require('../messme.js')
+const { Repeater } = require('../lib/messme.js');
 
 test('Repeater #1', () => {
     let valor = 0;

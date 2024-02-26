@@ -1,21 +1,49 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: messme.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: messme.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
 function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _possibleConstructorReturn(self, call) { if (call &amp;&amp; (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" &amp;&amp; superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol &amp;&amp; "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o &amp;&amp; "function" == typeof Symbol &amp;&amp; o.constructor === Symbol &amp;&amp; o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var BASIC_CHARS = "abcdefghijklmñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789";
 var SPECIAL_CHARS = "áéíóúÁÉÍÓÚ";
-var SYMBOL_CHARS = "¿?¡!()[]{}-_.,;:@#$%&/=+*";
+var SYMBOL_CHARS = "¿?¡!()[]{}-_.,;:@#$%&amp;/=+*";
 var SINGLE_BOX_CHARS = "┌┐└┘─│";
 var DOUBLE_BOX_CHARS = "╔╗╚╝═║";
 var ROUND_BOX_CHARS = "╭╮╰╯─│";
@@ -33,7 +61,7 @@ var DICE_CHARS = '⚀⚁⚂⚃⚄⚅';
  * @type {object} 
  * @property {string} basic abcdefghijklmñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789
  * @property {string} special áéíóúÁÉÍÓÚ
- * @property {string} symbol ¿?¡!()[]{}-_.,;:@#$%&/=+*
+ * @property {string} symbol ¿?¡!()[]{}-_.,;:@#$%&amp;/=+*
  * @property {string} single_box ┌┐└┘─│
  * @property {string} double_box ╔╗╚╝═║
  * @property {string} round_box ╭╮╰╯─│
@@ -71,7 +99,7 @@ var ascii_chars = {
  * @returns {array} array de caracteres
  */
 function createSet() {
-  for (var _len = arguments.length, sets = new Array(_len), _key = 0; _key < _len; _key++) {
+  for (var _len = arguments.length, sets = new Array(_len), _key = 0; _key &lt; _len; _key++) {
     sets[_key] = arguments[_key];
   }
   return sets.join('').split('');
@@ -107,9 +135,9 @@ var Repeater = /*#__PURE__*/function () {
    * 
   */
   function Repeater() {
-    var goal = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
-    var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
-    var autoreset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    var goal = arguments.length > 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : 10;
+    var delay = arguments.length > 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : 100;
+    var autoreset = arguments.length > 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : false;
     var repeat_action = arguments.length > 3 ? arguments[3] : undefined;
     var end_action = arguments.length > 4 ? arguments[4] : undefined;
     _classCallCheck(this, Repeater);
@@ -344,8 +372,8 @@ var DynamicText = /*#__PURE__*/function () {
    * @param {*} autoreset  Opcional, permite reiniciar automaticamente
    */
   function DynamicText(element) {
-    var play_mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "loop";
-    var autoreset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    var play_mode = arguments.length > 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : "loop";
+    var autoreset = arguments.length > 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : false;
     _classCallCheck(this, DynamicText);
     this.element = element;
     this.text = element.innerHTML;
@@ -431,8 +459,8 @@ var MessManager = /*#__PURE__*/function () {
    */
   function MessManager(selector) {
     var _this = this;
-    var play_mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "loop";
-    var autoreset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    var play_mode = arguments.length > 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : "loop";
+    var autoreset = arguments.length > 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : false;
     _classCallCheck(this, MessManager);
     this.elements = document.querySelectorAll(selector);
     this.dynamicTexts = [];
@@ -523,3 +551,26 @@ var MessManager = /*#__PURE__*/function () {
 module.exports = {
   Repeater: Repeater
 };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ascii_chars">ascii_chars</a></li><li><a href="global.html#createSet">createSet</a></li><li><a href="global.html#randomMethods">randomMethods</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Feb 26 2024 16:53:14 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
