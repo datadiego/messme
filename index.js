@@ -254,7 +254,7 @@ class Fixer extends Manipulator{
 class DynamicText{
     /**
      * DynamicText es una clase que permite manipular el texto de un elemento HTML, consiste en un texto que se descompone en caracteres y se manipula para crear efectos visuales
-     * @param {HTML element} element Elemento HTML que contiene el texto
+     * @param {*} element Elemento HTML que contiene el texto
      * @param {*} play_mode  Opcional, loop o oneshot
      * @param {*} autoreset  Opcional, permite reiniciar automaticamente
      */
