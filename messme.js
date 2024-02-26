@@ -284,7 +284,7 @@ class Fixer extends Manipulator{
 
 class DynamicText{
     /**
-     * DynamicText es una clase que permite manipular el texto de un elemento HTML, consiste en un texto que se descompone en caracteres y se manipula para crear efectos visuales
+     * DynamicText es una clase que espera un elemento HTML para manipular su texto en tiempo real, Mess depende de esta clase
      * @param {*} element Elemento HTML que contiene el texto
      * @param {*} play_mode  Opcional, loop o oneshot
      * @param {*} autoreset  Opcional, permite reiniciar automaticamente
@@ -338,23 +338,23 @@ class DynamicText{
     }
 }
 
-class MessManager{
+class Mess{
     /**
-     * MessManager
+     * Mess
      * @param {string} selector id, clase o selector css
      * @param {string} play_mode Opcional, loop o oneshot (Default: loop)
      * @param {boolean} autoreset Opcional, controla si se reinicia automaticamente 
      * 
      * @example
-     * const messManager = new MessManager('.mess-me', 'loop', false);
-     * messManager.mess();
+     * const mess = new Mess('.mess-me', 'loop', false);
+     * mess.mess();
      * 
      * @example
-     * const messManager = new MessManager('.mess-me', 'oneshot', false);
-     * messManager.setMessDelay(100);
-     * messManager.setFixDelay(100);
-     * messManager.setIdleTime(2000);
-     * messManager.mess();
+     * const mess = new Mess('.mess-me', 'oneshot', false);
+     * mess.setMessDelay(100);
+     * mess.setFixDelay(100);
+     * mess.setIdleTime(2000);
+     * mess.mess();
      */
     constructor(selector, play_mode="loop", autoreset=false){
         this.elements = document.querySelectorAll(selector);
@@ -430,5 +430,5 @@ class MessManager{
     
 }
 
-module.exports = { Repeater }
+module.exports = { Repeater, DynamicText }
 
