@@ -2,12 +2,21 @@
 
 Libreria para la destrucción creativa de elementos del DOM.
 
+[Demo](https://messme.neocities.org/)
+[Docs](https://messme.neocities.org/docs/)
+
 ## Instalación
 
 Descarga messme.js y añade el siguiente código en tu `<head>`:
 
 ```html
 <script src="messme.js"></script>
+```
+
+O usalo directamente desde el CDN:
+
+```html
+  <script src="https://cdn.jsdelivr.net/gh/datadiego/messme/messme.js"></script>
 ```
 
 ## Uso
